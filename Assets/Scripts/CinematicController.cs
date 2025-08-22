@@ -78,4 +78,11 @@ public class CinematicController : MonoBehaviour
         Color final = img.color;
         img.color = new Color(final.r, final.g, final.b, targetAlpha);
     }
+
+    
+      public void Skip()
+    {
+
+        SceneManager.LoadScene("Game01");
+    }
 }
