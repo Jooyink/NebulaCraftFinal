@@ -1528,7 +1528,7 @@ MonoBehaviour:
   - {fileID: 939391722}
   nextScene: 
   fadeDuration: 0.5
-  tiempoPorImagen: 1.5
+  tiempoPorImagen: 0.8
 --- !u!1 &1562152978
 GameObject:
   m_ObjectHideFlags: 0

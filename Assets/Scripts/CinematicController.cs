@@ -32,6 +32,8 @@ public class CinematicController : MonoBehaviour
         StartCoroutine(AvanzarCinematica());
     }
 
+    
+
     IEnumerator AvanzarCinematica()
     {
         while (indiceActual < imagenes.Length)
@@ -56,6 +58,8 @@ public class CinematicController : MonoBehaviour
                     SceneManager.LoadScene(nextScene);
                 else
                     Debug.Log("Cinemática terminada.");
+                      SceneManager.LoadScene("Game01");
+
             }
         }
     }

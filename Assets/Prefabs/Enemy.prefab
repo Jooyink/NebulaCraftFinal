@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3154575843782032776}
   - component: {fileID: 2690858482554085360}
-  - component: {fileID: 7520247998777959051}
   - component: {fileID: 7278027394322081813}
   m_Layer: 0
   m_Name: Enemy
@@ -86,20 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7520247998777959051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1176448757343400672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4c3dcdd8fa7a044b1396d8ab3c2406, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreValue: 10
-  speed: 2
 --- !u!61 &7278027394322081813
 BoxCollider2D:
   m_ObjectHideFlags: 0
