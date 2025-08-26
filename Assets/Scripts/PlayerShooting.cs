@@ -16,4 +16,6 @@ public class PlayerShooting : MonoBehaviour
             bullet.GetComponent<Rigidbody2D>().velocity = Vector2.up * bulletSpeed;
         }
     }
+
+  
 }

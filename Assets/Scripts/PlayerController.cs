@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour
 
         transform.Translate(Vector2.right * move * speed * Time.deltaTime);
 
-        // Limitar movimiento (ejemplo, borde pantalla -8 a 8)
-        float clampedX = Mathf.Clamp(transform.position.x, -8f, 8f);
-        transform.position = new Vector2(clampedX, transform.position.y);
+  
     }
 }
