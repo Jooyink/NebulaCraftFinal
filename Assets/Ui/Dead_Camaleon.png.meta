@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6397d1ee9e9b68c4282ccb5d539b0ca6
+guid: 01a4d16826c074649b3b73d670f61027
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,7 +123,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explotion_0
+      name: Dead_Camaleon_0
       rect:
         serializedVersion: 2
         x: 0
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffebb75bc1103b340ae62082a8463eda
-      internalID: -172363347
+      spriteID: 22f2b8b6b4fa1d54eb4f7eeeb2dda725
+      internalID: 549893260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explotion_1
+      name: Dead_Camaleon_1
       rect:
         serializedVersion: 2
         x: 48
@@ -158,113 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e461cf0ce5e326f45be836b33f4a2c0f
-      internalID: 983555178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c89b977f39198844cad6b107f9556707
-      internalID: -1706778436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bfc784f406021542a76feadd2588b1c
-      internalID: -2071617958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c503576754deefe4589b60e7b2457fa4
-      internalID: -744025157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06c6defe0af1d774081baaa2bd0cc559
-      internalID: 343217179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e071e73a3d0eb44fa6f7a88fcc0b358
-      internalID: 956370033
+      spriteID: 723e0f70988b1b445bb076a6f2e0b349
+      internalID: -405689764
       vertices: []
       indices: 
       edges: []
@@ -280,13 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explotion_0: -172363347
-      Explotion_1: 983555178
-      Explotion_2: -1706778436
-      Explotion_3: -2071617958
-      Explotion_4: -744025157
-      Explotion_5: 343217179
-      Explotion_6: 956370033
+      Dead_Camaleon_0: 549893260
+      Dead_Camaleon_1: -405689764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

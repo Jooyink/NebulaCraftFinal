@@ -1,18 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    // 📌 Singleton (para que todos los scripts puedan acceder)
+    public static GameManager instance;
+
+    //VARIABLES
+    public int vida = 3;
+
+
+    public int score=0;
+    public int sumarscore = 10;
+    public int MaxScore;
+
+
+
+
+    private void Awake()
     {
-        
+        // Configurar Singleton
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AgregarVida()
     {
         
+
+    }
+
+    public void QuitarVida()
+    {
+
+        vida--;
+        if (vida == 0)
+        {
+            GameOver();
+        }
+
+    }
+
+    public void AgregarScore()
+    {
+        score = +sumarscore;
+          Debug.Log("Score :"+score);
+
+    }
+
+    public void GameOver()
+    {
+        Debug.Log("GameOver :( ");
+         SceneManager.LoadScene("GameOver");
+
     }
 }

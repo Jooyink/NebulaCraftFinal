@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6397d1ee9e9b68c4282ccb5d539b0ca6
+guid: 5df9b937b30704947bb1332cc8a7e7a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Explotion_0
+      name: Corazon_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ffebb75bc1103b340ae62082a8463eda
-      internalID: -172363347
+      spriteID: f3540c24262339d4a84ecc43c95b3aec
+      internalID: 460681143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explotion_1
+      name: Corazon_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af97718fb1d4494ab2e9a9f9602fe5d
+      internalID: 1313329695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corazon_2
       rect:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 48
-        height: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +179,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e461cf0ce5e326f45be836b33f4a2c0f
-      internalID: 983555178
+      spriteID: c48ca8c3037ea8c4b924cd5681ad58c2
+      internalID: 652116643
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Explotion_2
+      name: Corazon_3
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ebb5727e548bb49bb8410b503d85f1
+      internalID: 1787007796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Corazon_4
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 48
-        height: 48
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,92 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c89b977f39198844cad6b107f9556707
-      internalID: -1706778436
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5bfc784f406021542a76feadd2588b1c
-      internalID: -2071617958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c503576754deefe4589b60e7b2457fa4
-      internalID: -744025157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06c6defe0af1d774081baaa2bd0cc559
-      internalID: 343217179
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Explotion_6
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e071e73a3d0eb44fa6f7a88fcc0b358
-      internalID: 956370033
+      spriteID: b5e73f44080d03c4a8e0909977a19b27
+      internalID: 2036737970
       vertices: []
       indices: 
       edges: []
@@ -280,13 +238,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Explotion_0: -172363347
-      Explotion_1: 983555178
-      Explotion_2: -1706778436
-      Explotion_3: -2071617958
-      Explotion_4: -744025157
-      Explotion_5: 343217179
-      Explotion_6: 956370033
+      Corazon_0: 460681143
+      Corazon_1: 1313329695
+      Corazon_2: 652116643
+      Corazon_3: 1787007796
+      Corazon_4: 2036737970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
