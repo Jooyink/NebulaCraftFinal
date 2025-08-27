@@ -7,10 +7,11 @@ public class Bullet : MonoBehaviour
 {
 
     public GameObject explotionPrefab;
+    private PointManager pointManager;
     // Start is called before the first frame update
     void Start()
     {
-
+        pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Bullet : MonoBehaviour
         {
             Instantiate(explotionPrefab, transform.position, Quaternion.identity);
             Destroy(Collision.gameObject);
+            pointManager.UpdateScore(50);
             Destroy(gameObject);
           
         }

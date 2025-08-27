@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Boundary
+  - EnemyProyectile
   layers:
   - Default
   - TransparentFX

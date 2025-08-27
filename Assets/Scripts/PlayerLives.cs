@@ -23,7 +23,7 @@ public class PlayerLives : MonoBehaviour
 
     {
 
-        if (collision.collider.gameObject.tag == ("Enemy"))
+        if (collision.collider.gameObject.tag == ("Enemy") || collision.collider.gameObject.tag==("EnemyProyectile"))
         {
             Destroy(collision.collider.gameObject);
             Instantiate(explotionPrefab, transform.position, Quaternion.identity);
