@@ -5,63 +5,41 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Enemigos disponibles")]
-    public GameObject[] enemigosPrefab; // prefabs diferentes de enemigos
+    [Header("Configuración del spawn")]
+    public GameObject enemyPrefab;     // Prefab del enemigo
+    public Collider2D spawnArea;       // Área donde spawnearán los enemigos
+    public float spawnIntervalMin = 1f; 
+    public float spawnIntervalMax = 3f; 
 
-    [Header("Configuración")]
-    public float minTiempoSpawn = 1f;   // tiempo mínimo entre spawns
-    public float maxTiempoSpawn = 3f;   // tiempo máximo entre spawns
-    public int minCantidad = 1;         // cantidad mínima de enemigos por spawn
-    public int maxCantidad = 3;         // cantidad máxima de enemigos por spawn
-
-    private Collider2D zona; // collider que define el área de spawn
-    private float tiempoProximoSpawn;
-
-    void Start()
+    private void Start()
     {
-        zona = GetComponent<Collider2D>();
-
-        // Primer spawn aleatorio
-        tiempoProximoSpawn = Random.Range(minTiempoSpawn, maxTiempoSpawn);
+        StartCoroutine(SpawnEnemies());
     }
 
-    void Update()
+    private System.Collections.IEnumerator SpawnEnemies()
     {
-        tiempoProximoSpawn -= Time.deltaTime;
-
-        if (tiempoProximoSpawn <= 0)
+        while (true)
         {
-            SpawnEnemies();
+            float waitTime = Random.Range(spawnIntervalMin, spawnIntervalMax);
+            yield return new WaitForSeconds(waitTime);
 
-            // Reiniciar tiempo aleatorio
-            tiempoProximoSpawn = Random.Range(minTiempoSpawn, maxTiempoSpawn);
+            Vector2 randomPoint = GetRandomPointInCollider(spawnArea);
+            Instantiate(enemyPrefab, randomPoint, Quaternion.identity);
         }
     }
 
-    void SpawnEnemies()
-    {
-        // Elegir cantidad de enemigos aleatoria
-        int cantidad = Random.Range(minCantidad, maxCantidad + 1);
-
-        for (int i = 0; i < cantidad; i++)
-        {
-            // Elegir enemigo aleatorio del arreglo
-            int randomIndex = Random.Range(0, enemigosPrefab.Length);
-            GameObject enemigoElegido = enemigosPrefab[randomIndex];
-
-            // Posición aleatoria dentro del collider
-            Vector2 spawnPos = GetRandomPositionInCollider(zona);
-
-            // Instanciar enemigo
-            Instantiate(enemigoElegido, spawnPos, Quaternion.identity);
-        }
-    }
-
-    Vector2 GetRandomPositionInCollider(Collider2D col)
+    private Vector2 GetRandomPointInCollider(Collider2D col)
     {
         Bounds bounds = col.bounds;
-        float x = Random.Range(bounds.min.x, bounds.max.x);
-        float y = Random.Range(bounds.min.y, bounds.max.y);
-        return new Vector2(x, y);
+        Vector2 point;
+        do
+        {
+            float randomX = Random.Range(bounds.min.x, bounds.max.x);
+            float randomY = Random.Range(bounds.min.y, bounds.max.y);
+            point = new Vector2(randomX, randomY);
+        }
+        while (!col.OverlapPoint(point));
+
+        return point;
     }
 }
