@@ -9,6 +9,9 @@ public class PlayerLives : MonoBehaviour
     public Animator[] livesAnimators; // Animators correspondientes a cada corazón
     public GameObject explotionPrefab;
 
+    public Animator animatorHit;
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // Si el jugador choca con un enemigo o proyectil
@@ -17,6 +20,7 @@ public class PlayerLives : MonoBehaviour
             Destroy(collision.collider.gameObject); // destruye el objeto que golpeó
             Instantiate(explotionPrefab, transform.position, Quaternion.identity); // efecto
             GameManager.instance.vida -= 1; // resta vida
+                      animatorHit.SetTrigger("Hit");
 
             // Actualiza la UI de corazones
             UpdateLivesUI();
@@ -43,6 +47,7 @@ public class PlayerLives : MonoBehaviour
                 if (livesUI[i].enabled) // si estaba activo y ahora debe morir
                 {
                     livesAnimators[i].SetTrigger("Muerte"); // dispara la animación
+                    animatorHit.SetTrigger("Hit");
                 }
                 // OJO: no desactivamos el corazón aquí, eso lo hace la animación al final
             }
