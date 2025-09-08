@@ -10,6 +10,10 @@ public class ProjectileSpawner : MonoBehaviour
     public float spawnMax = 10;
      public float spawMin = 5;
 
+    public Transform positionProyectile;
+
+     
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +26,7 @@ public class ProjectileSpawner : MonoBehaviour
         spawTimer -= Time.deltaTime;
         if (spawTimer <= 0)
         {
-            Instantiate(enemyProjectile, transform.position, Quaternion.identity);
+            Instantiate(enemyProjectile, positionProyectile.position, Quaternion.identity);
             spawTimer=Random.Range(spawMin, spawnMax);
         }
     }

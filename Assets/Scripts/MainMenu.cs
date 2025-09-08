@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+
+        public GameObject controlsUi;
+
     public void PlayGame()
     {
 
@@ -15,10 +18,14 @@ public class MainMenu : MonoBehaviour
        public void Controls()
     {
 
-        SceneManager.LoadScene("Controls");
+        controlsUi.SetActive(true);
     }
 
-      public void Credits()
+     public void Resume()
+    {
+        controlsUi.SetActive(false);
+    }
+    public void Credits()
     {
 
         SceneManager.LoadScene("Credits");

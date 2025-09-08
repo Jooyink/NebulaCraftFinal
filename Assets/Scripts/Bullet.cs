@@ -14,11 +14,6 @@ public class Bullet : MonoBehaviour
         pointManager = GameObject.Find("PointManager").GetComponent<PointManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D Collision)
     {
@@ -29,14 +24,21 @@ public class Bullet : MonoBehaviour
             Destroy(Collision.gameObject);
             pointManager.UpdateScore(50);
             Destroy(gameObject);
-          
+
         }
         if (Collision.gameObject.tag == "Boundary")
         {
-           
+
             Destroy(gameObject);
         }
-    }
+       // if (Collision.gameObject.tag == "EnemyProyectile")  // ESTE CÓDIGO FUNCIONA PARA ELIMINAR LOS PROYECTILES DE ENEMIGOS
+        //{ 
+         //   Destroy(Collision.gameObject);
+        //    Destroy(gameObject);
 
+        
+         // }
+    }
+      
   
 }
