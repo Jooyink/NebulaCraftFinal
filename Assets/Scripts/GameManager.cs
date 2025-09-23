@@ -52,7 +52,9 @@ public class GameManager : MonoBehaviour
     public void AgregarScore()
     {
         score = +sumarscore;
-          Debug.Log("Score :"+score);
+        Debug.Log("Score :" + score);
+     
+
 
     }
 
@@ -60,6 +62,6 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("GameOver :( ");
          SceneManager.LoadScene("GameOver");
-
+                   
     }
 }

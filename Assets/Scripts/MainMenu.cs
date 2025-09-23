@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
 
         public GameObject controlsUi;
 
+        public GameObject ScoreUi;
+
     public void PlayGame()
     {
 
@@ -21,14 +23,15 @@ public class MainMenu : MonoBehaviour
         controlsUi.SetActive(true);
     }
 
-     public void Resume()
+    public void Resume()
     {
         controlsUi.SetActive(false);
+        ScoreUi.SetActive(false);
     }
-    public void Credits()
+    public void Score()
     {
 
-        SceneManager.LoadScene("Credits");
+        ScoreUi.SetActive(true);
     }
 
     public void QuitGame()
