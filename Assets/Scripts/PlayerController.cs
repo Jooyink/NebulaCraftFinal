@@ -1,43 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+
+    PlayerControls controls;
+
+    void Awake()
+    {
+
+        controls = new PlayerControls();
+
+        controls.Gameplay.Move.performed += ctx => Update();
+
+          
+    }
+
+
     public float speed = 5f;
     public float dashSpeed = 10f;
     public float dashDuration = 0.2f; // cuanto dura el dash
     private bool isDashing = false;
 
     public Animator animator;
-
+    public float MoveInput;
     void Update()
     {
         if (!isDashing) // solo se mueve normal si no está en dash
         {
-            float move = Input.GetAxis("Horizontal");
+            MoveInput = Input.GetAxis("Horizontal");
 
-            animator.SetFloat("movement", Mathf.Abs(move));
+            animator.SetFloat("movement", Mathf.Abs(MoveInput));
 
-            if (move > 0)
+            if (MoveInput > 0)
                 transform.localScale = new Vector3(-1, 1, 1);
 
-            if (move < 0)
+            if (MoveInput < 0)
                 transform.localScale = new Vector3(1, 1, 1);
 
-            transform.Translate(Vector2.right * move * speed * Time.deltaTime);
+            transform.Translate(Vector2.right * MoveInput * speed * Time.deltaTime);
 
             // Dash con tecla E
-            if (Input.GetKeyDown(KeyCode.E) && move != 0)
+            if (Input.GetKeyDown(KeyCode.E) && MoveInput != 0)
             {
-                StartCoroutine(Dash(move));
+                StartCoroutine(Dash(MoveInput));
             }
         }
     }
 
+    
+
+ 
     IEnumerator Dash(float direction)
     {
         isDashing = true;
@@ -51,5 +68,17 @@ public class PlayerController : MonoBehaviour
         }
 
         isDashing = false;
+    }
+
+    void OnEnable()
+    {
+
+        controls.Gameplay.Enable();
+    }
+
+    void OnDisable()
+    {
+
+        controls.Gameplay.Disable();
     }
 }

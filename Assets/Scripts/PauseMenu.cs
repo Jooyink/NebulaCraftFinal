@@ -4,6 +4,10 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+
+
 public class PauseMenu : MonoBehaviour
 {
 
@@ -12,7 +16,15 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     public GameObject controlsUi;
 
+    public GameObject ResumeButton;
 
+    PlayerControls controls;
+    void Awake()
+    {
+        controls = new PlayerControls();
+
+        controls.Gameplay.Pause.performed += ctx => Pause();
+    }
     void Update()
     {
 
@@ -40,10 +52,13 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
     void Pause()
-    {   
+    {
         pasueMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+
+        EventSystem.current.SetSelectedGameObject(null);
+    EventSystem.current.SetSelectedGameObject(ResumeButton);
 
     }
 
@@ -52,14 +67,24 @@ public class PauseMenu : MonoBehaviour
         controlsUi.SetActive(true);
         GameIsPaused = true;
     }
-     
-     public void Exit()
+
+    public void Exit()
     {
         pasueMenuUi.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
-         SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu");
 
     }
+    
+    void OnEnable()
+{
+    controls.Enable();
+}
+
+void OnDisable()
+{
+    controls.Disable();
+}
 }
 
