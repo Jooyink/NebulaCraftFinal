@@ -695,6 +695,7 @@ MonoBehaviour:
   dashSpeed: 9
   dashDuration: 0.2
   animator: {fileID: 453391222}
+  MoveInput: 0
 --- !u!114 &453391226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,6 +1525,7 @@ GameObject:
   - component: {fileID: 736957550}
   - component: {fileID: 736957549}
   - component: {fileID: 736957552}
+  - component: {fileID: 736957553}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1650,6 +1652,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &736957553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736957548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46b6bd170491e5a459b11a2bd2c88534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &817642617
 GameObject:
   m_ObjectHideFlags: 0

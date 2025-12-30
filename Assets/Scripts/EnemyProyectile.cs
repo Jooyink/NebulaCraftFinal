@@ -24,6 +24,7 @@ public class EnemyProyectile : MonoBehaviour
         if (collision.gameObject.tag == "Boundary")
         {
             Destroy(gameObject);
+              
         }
 
     }

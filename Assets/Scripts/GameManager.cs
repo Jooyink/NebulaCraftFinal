@@ -42,8 +42,12 @@ public class GameManager : MonoBehaviour
     {
 
         vida--;
+           Camera.main.GetComponent<CamaraShake>()
+    .Shake(0.15f, 0.08f);
         if (vida == 0)
         {
+             Camera.main.GetComponent<CamaraShake>()
+    .Shake(0.15f, 0.08f);
             GameOver();
         }
 

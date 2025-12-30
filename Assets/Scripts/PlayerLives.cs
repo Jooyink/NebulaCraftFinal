@@ -22,6 +22,9 @@ public class PlayerLives : MonoBehaviour
             GameManager.instance.vida -= 1; // resta vida
                       animatorHit.SetTrigger("Hit");
 
+                       Camera.main.GetComponent<CamaraShake>()
+    .Shake(0.15f, 0.08f); //Animacion de Shake en camara
+
             // Actualiza la UI de corazones
             UpdateLivesUI();
 
