@@ -43,6 +43,9 @@ public class PlayerShooting : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         bullet.GetComponent<Rigidbody2D>().velocity = Vector2.up * bulletSpeed;
+
+        AudioManager.instance.PlaySFX(AudioManager.instance.shootSFX);
+
     }
     
     void OnEnable()      // <-- Nombre correcto

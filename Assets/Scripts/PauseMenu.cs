@@ -24,6 +24,8 @@ public class PauseMenu : MonoBehaviour
         controls = new PlayerControls();
 
         controls.Gameplay.Pause.performed += ctx => Pause();
+
+        
     }
     void Update()
     {
@@ -39,6 +41,7 @@ public class PauseMenu : MonoBehaviour
             {
                 Pause();
             }
+
 
         }
 
@@ -76,6 +79,8 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
 
     }
+
+   
     
     void OnEnable()
 {

@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int sumarscore = 10;
     public int MaxScore;
 
+    public PauseMenu pauseMenu;
+
 
 
 
@@ -41,17 +43,15 @@ public class GameManager : MonoBehaviour
     public void QuitarVida()
     {
 
-        vida--;
-           Camera.main.GetComponent<CamaraShake>()
-    .Shake(0.15f, 0.08f);
-        if (vida == 0)
-        {
-             Camera.main.GetComponent<CamaraShake>()
-    .Shake(0.15f, 0.08f);
-            GameOver();
-        }
+        vida--;   
 
-    }
+   
+}
+
+
+    
+
+    
 
     public void AgregarScore()
     {
