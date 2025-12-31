@@ -13,7 +13,7 @@ public class GameOver : MonoBehaviour
 
          public GameObject isgameOver;
 
-   
+   private bool gameOverPlayed=false;
         
 
     // Update is called once per frame
@@ -31,6 +31,11 @@ public class GameOver : MonoBehaviour
     public void Riperoini()
     {
 
+        if (gameOverPlayed) return;
+
+        gameOverPlayed=true;
+
+        
     isgameOver.SetActive(true);
     //pasueMenuUi.SetActive(false);
     //controlsUi.SetActive(false);
@@ -38,7 +43,8 @@ public class GameOver : MonoBehaviour
     //GameIsPaused = true;
 
     EventSystem.current.SetSelectedGameObject(null);
-        
+         AudioManager.instance.PlaySFX(AudioManager.instance.gameOvers);
+
 
     }
 }

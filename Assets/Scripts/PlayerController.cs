@@ -7,8 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-
-    PlayerControls controls;
+[Header("Dash After Image")]
+public GameObject dashImagePrefab;
+public float afterImageDelay = 0.05f;    PlayerControls controls;
 
     void Awake()
     {
@@ -56,19 +57,44 @@ public class PlayerController : MonoBehaviour
 
  
     IEnumerator Dash(float direction)
-    {
-        isDashing = true;
+    
+      {
+    isDashing = true;
 
-        float time = 0;
-        while (time < dashDuration)
+    float time = 0;
+    float afterImageTimer = 0;
+
+    while (time < dashDuration)
+    {
+        transform.Translate(Vector2.right * direction * dashSpeed * Time.deltaTime);
+
+        // Crear afterimages
+        afterImageTimer += Time.deltaTime;
+        if (afterImageTimer >= afterImageDelay)
         {
-            transform.Translate(Vector2.right * direction * dashSpeed * Time.deltaTime);
-            time += Time.deltaTime;
-            yield return null;
+            SpawnAfterImage();
+            afterImageTimer = 0;
         }
 
-        isDashing = false;
+        time += Time.deltaTime;
+        yield return null;
     }
+
+    isDashing = false;
+}
+
+void SpawnAfterImage()
+{
+    GameObject img = Instantiate(
+        dashImagePrefab,
+        transform.position,
+        transform.rotation
+    );
+
+    SpriteRenderer sr = img.GetComponent<SpriteRenderer>();
+    sr.sprite = GetComponent<SpriteRenderer>().sprite;
+    sr.flipX = GetComponent<SpriteRenderer>().flipX;
+}
 
     void OnEnable()
     {

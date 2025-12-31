@@ -17,10 +17,13 @@ public class PlayerLives : MonoBehaviour
         // Si el jugador choca con un enemigo o proyectil
         if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("EnemyProyectile"))
         {
+                    AudioManager.instance.PlaySFX(AudioManager.instance.explosionSFX);
+
             Destroy(collision.collider.gameObject); // destruye el objeto que golpeó
             Instantiate(explotionPrefab, transform.position, Quaternion.identity); // efecto
             GameManager.instance.vida -= 1; // resta vida
                       animatorHit.SetTrigger("Hit");
+
 
                        Camera.main.GetComponent<CamaraShake>()
     .Shake(0.15f, 0.08f); //Animacion de Shake en camara
@@ -35,6 +38,7 @@ public class PlayerLives : MonoBehaviour
             }
         }
     }
+    
 
     private void UpdateLivesUI()
     {

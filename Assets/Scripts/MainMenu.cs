@@ -22,23 +22,28 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
 
         SceneManager.LoadScene("Cinematic");
     }
 
        public void Controls()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
 
         controlsUi.SetActive(true);
     }
 
     public void Resume()
     {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+
         controlsUi.SetActive(false);
         ScoreUi.SetActive(false);
     }
     public void Score()
     {
+        AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
 
         ScoreUi.SetActive(true);
     }

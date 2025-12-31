@@ -49,6 +49,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+
         pasueMenuUi.SetActive(false);
         controlsUi.SetActive(false);
         Time.timeScale = 1f;
@@ -56,6 +58,8 @@ public class PauseMenu : MonoBehaviour
     }
     void Pause()
     {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+
         pasueMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
@@ -67,12 +71,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Controls()
     {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+
         controlsUi.SetActive(true);
         GameIsPaused = true;
     }
 
     public void Exit()
     {
+                AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+
         pasueMenuUi.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;

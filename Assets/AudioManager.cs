@@ -13,6 +13,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip explosionSFX;
     public AudioClip uiClickSFX;
 
+    public AudioClip gameOvers;
+
+    public AudioClip missionsita;
     void Awake()
     {
         if (instance == null)

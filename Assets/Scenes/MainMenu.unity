@@ -152,7 +152,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 78b7220ab750ece47a5bd4fd6cdbb53c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.483
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8525,6 +8525,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4285738029623142190, guid: b59204f7b2736634da926afc739747fd, type: 3}
+      propertyPath: hitSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08b290c0e62d20947a98f036441b140c, type: 3}
+    - target: {fileID: 4285738029623142190, guid: b59204f7b2736634da926afc739747fd, type: 3}
+      propertyPath: gameOvers
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e5d11edd237e3d4f8e211322be7cefa, type: 3}
+    - target: {fileID: 4285738029623142190, guid: b59204f7b2736634da926afc739747fd, type: 3}
+      propertyPath: uiClickSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 9abb9fdeac523664b95979bef8c57921, type: 3}
+    - target: {fileID: 4285738029623142190, guid: b59204f7b2736634da926afc739747fd, type: 3}
+      propertyPath: explosionSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: da112ac51cd9b3d4eaa58419ceeceabe, type: 3}
     - target: {fileID: 4823926171759032334, guid: b59204f7b2736634da926afc739747fd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 228.36359
@@ -8564,6 +8580,10 @@ PrefabInstance:
     - target: {fileID: 4823926171759032334, guid: b59204f7b2736634da926afc739747fd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856364203908307503, guid: b59204f7b2736634da926afc739747fd, type: 3}
+      propertyPath: m_Volume
+      value: 0.704
       objectReference: {fileID: 0}
     - target: {fileID: 8973327018773625016, guid: b59204f7b2736634da926afc739747fd, type: 3}
       propertyPath: m_Name

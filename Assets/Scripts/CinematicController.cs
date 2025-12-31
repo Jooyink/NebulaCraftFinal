@@ -19,8 +19,14 @@ public class CinematicController : MonoBehaviour
 
     private int indiceActual = 0;
 
+    public AudioSource musicaCinematica;
+
+public GameObject missionComplete;
+
+
     void Start()
     {
+            
         // Hacer todas las imágenes transparentes menos la primera
         for (int i = 0; i < imagenes.Length; i++)
         {
@@ -39,54 +45,65 @@ public class CinematicController : MonoBehaviour
         while (indiceActual < imagenes.Length)
         {
             // Esperar el tiempo que dura la imagen
-            yield return new WaitForSeconds(tiempoPorImagen);
+            yield return new WaitForSecondsRealtime(tiempoPorImagen);
 
             // Fade out de la imagen actual
             yield return StartCoroutine(FadeImagen(imagenes[indiceActual], 0f));
 
             indiceActual++;
 
-            if (indiceActual < imagenes.Length)
+if (indiceActual < imagenes.Length)
             {
-                // Fade in de la siguiente imagen
                 yield return StartCoroutine(FadeImagen(imagenes[indiceActual], 1f));
+                
             }
             else
             {
-                // Si no hay más imágenes, carga la escena final
-                if (!string.IsNullOrEmpty(nextScene))
-                    SceneManager.LoadScene(nextScene);
-                else
-                    Debug.Log("Cinemática terminada.");
-                      SceneManager.LoadScene("Game01");
+                        musicaCinematica.volume=0f;
 
+                AnimationMission();
+                                                AudioManager.instance.PlaySFX(AudioManager.instance.missionsita);
+
+                  yield break;
             }
         }
     }
 
-    IEnumerator FadeImagen(Image img, float targetAlpha)
+  IEnumerator FadeImagen(Image img, float targetAlpha)
+{
+    float startAlpha = img.color.a;
+    float t = 0f;
+
+    while (t < fadeDuration)
     {
-        float startAlpha = img.color.a;
-        float t = 0f;
-
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            float alpha = Mathf.Lerp(startAlpha, targetAlpha, t / fadeDuration);
-            Color c = img.color;
-            img.color = new Color(c.r, c.g, c.b, alpha);
-            yield return null;
-        }
-
-        // Asegurarnos que llegue al alpha final
-        Color final = img.color;
-        img.color = new Color(final.r, final.g, final.b, targetAlpha);
+        t += Time.unscaledDeltaTime; // 
+        float alpha = Mathf.Lerp(startAlpha, targetAlpha, t / fadeDuration);
+        Color c = img.color;
+        img.color = new Color(c.r, c.g, c.b, alpha);
+        yield return null;
     }
 
-    
-      public void Skip()
+    Color final = img.color;
+    img.color = new Color(final.r, final.g, final.b, targetAlpha);
+}
+
+
+    public void AnimationMission()
     {
 
+        missionComplete.SetActive(true);
+        
+    }
+
+    // Este método lo llamas desde la animación
+    public void LoadGame01()
+    {
         SceneManager.LoadScene("Game01");
     }
+
+    public void Skip()
+    {
+        SceneManager.LoadScene("Game01");
+    }
+
 }

@@ -20,10 +20,13 @@ public class Bullet : MonoBehaviour
 
         if (Collision.gameObject.tag == "Enemy")
         {
+                          AudioManager.instance.PlaySFX(AudioManager.instance.hitSFX);
+
             Instantiate(explotionPrefab, transform.position, Quaternion.identity);
             Destroy(Collision.gameObject);
             pointManager.UpdateScore(50);
             Destroy(gameObject);
+
 
         }
         if (Collision.gameObject.tag == "Boundary")
