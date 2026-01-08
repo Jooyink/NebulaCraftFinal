@@ -6,7 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
-
+    public float delayBeforeLoad = 4f; // duración del sonido
+    public GameObject scorePanel;
   public GameObject PlayButton;
     void Start()
     { 
@@ -23,6 +24,8 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
+                StartCoroutine(LoadSceneAfterDelay());
+
 
         SceneManager.LoadScene("Cinematic");
     }
@@ -34,6 +37,11 @@ public class MainMenu : MonoBehaviour
         controlsUi.SetActive(true);
     }
 
+    IEnumerator LoadSceneAfterDelay()
+    {
+         yield return new WaitForSeconds(delayBeforeLoad);
+        SceneManager.LoadScene("Cinematic");
+    }
     public void Resume()
     {
                 AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
@@ -53,4 +61,16 @@ public class MainMenu : MonoBehaviour
 
         Application.Quit();
     }
+
+    public void OpenScoreBoard()
+{
+    HighScoreManager.instance.ReloadScores();
+    scorePanel.SetActive(true);
+}
+
+public void CloseScorePanel()
+    {
+        scorePanel.SetActive(false);
+    }
+    
 }

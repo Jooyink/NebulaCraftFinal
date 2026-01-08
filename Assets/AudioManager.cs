@@ -20,8 +20,10 @@ public class AudioManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
+            
         else
             Destroy(gameObject);
+            
     }
 
     public void PlaySFX(AudioClip clip)

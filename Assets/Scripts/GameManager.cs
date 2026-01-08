@@ -32,6 +32,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        Debug.Log(Application.persistentDataPath);
+
     }
 
     public void AgregarVida()
@@ -55,8 +58,8 @@ public class GameManager : MonoBehaviour
 
     public void AgregarScore()
     {
-        score = +sumarscore;
-        Debug.Log("Score :" + score);
+      score += sumarscore; 
+    Debug.Log("Score: " + score);
      
 
 
@@ -67,5 +70,5 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameOver :( ");
          SceneManager.LoadScene("GameOver");
                    
-    }
+    }       
 }
