@@ -40,6 +40,7 @@ public class GameOver : MonoBehaviour
     {
          Debug.Log("BOTÓN GUARDAR PRESIONADO");
         string playerName = nameInput.text;
+              AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
 
         if (string.IsNullOrEmpty(playerName))
             playerName = "PLAYER";
@@ -49,7 +50,7 @@ public class GameOver : MonoBehaviour
             GameManager.instance.score
         );
 
-        SceneManager.LoadScene("ScoreBoard");
+       
 
        
 

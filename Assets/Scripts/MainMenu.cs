@@ -63,7 +63,8 @@ public class MainMenu : MonoBehaviour
     }
 
     public void OpenScoreBoard()
-{
+{   
+      AudioManager.instance.PlaySFX(AudioManager.instance.uiClickSFX);
     HighScoreManager.instance.ReloadScores();
     scorePanel.SetActive(true);
 }
@@ -72,5 +73,5 @@ public void CloseScorePanel()
     {
         scorePanel.SetActive(false);
     }
-    
+
 }
