@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public float afterImageDelay = 0.05f;    PlayerControls controls;
 
         controls = new PlayerControls();
 
-        controls.Gameplay.Move.performed += ctx => Update();
+       // controls.Gameplay.Move.performed += ctx => Update();
 
           
     }
@@ -46,7 +46,7 @@ public float afterImageDelay = 0.05f;    PlayerControls controls;
             transform.Translate(Vector2.right * MoveInput * speed * Time.deltaTime);
 
             // Dash con tecla E
-            if (Input.GetKeyDown(KeyCode.E) && MoveInput != 0)
+            if (Input.GetKeyDown(KeyCode.E) && MoveInput != 0 )
             {
                 StartCoroutine(Dash(MoveInput));
             }

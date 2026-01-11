@@ -33,9 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Dash",
+                    "name": "DASHING",
                     "type": "Button",
-                    "id": "bc336686-f57a-4775-9781-64ee904aef39",
+                    "id": "c739ddd6-d69a-4b33-81f1-e952d30eeec7",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,23 +111,23 @@
                 },
                 {
                     "name": "",
-                    "id": "9489c5e3-42e1-4a03-b604-2d70a62c581e",
-                    "path": "<DualShockGamepad>/buttonEast",
+                    "id": "9542fa38-6d83-4b6e-b09f-638d19001087",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "DASHING",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6b21bfda-ad70-4003-82d2-58a3af23c7ae",
-                    "path": "E",
+                    "id": "a1e56b59-b703-4ffb-a994-aed2d90891b8",
+                    "path": "<DualShockGamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Dash",
+                    "action": "DASHING",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

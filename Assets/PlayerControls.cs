@@ -55,9 +55,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Dash"",
+                    ""name"": ""DASHING"",
                     ""type"": ""Button"",
-                    ""id"": ""bc336686-f57a-4775-9781-64ee904aef39"",
+                    ""id"": ""c739ddd6-d69a-4b33-81f1-e952d30eeec7"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -133,23 +133,23 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9489c5e3-42e1-4a03-b604-2d70a62c581e"",
-                    ""path"": ""<DualShockGamepad>/buttonEast"",
+                    ""id"": ""9542fa38-6d83-4b6e-b09f-638d19001087"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""DASHING"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""6b21bfda-ad70-4003-82d2-58a3af23c7ae"",
-                    ""path"": ""E"",
+                    ""id"": ""a1e56b59-b703-4ffb-a994-aed2d90891b8"",
+                    ""path"": ""<DualShockGamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Dash"",
+                    ""action"": ""DASHING"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -163,7 +163,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Disparo = m_Gameplay.FindAction("Disparo", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
-        m_Gameplay_Dash = m_Gameplay.FindAction("Dash", throwIfNotFound: true);
+        m_Gameplay_DASHING = m_Gameplay.FindAction("DASHING", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -228,7 +228,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Disparo;
     private readonly InputAction m_Gameplay_Pause;
-    private readonly InputAction m_Gameplay_Dash;
+    private readonly InputAction m_Gameplay_DASHING;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
@@ -236,7 +236,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Disparo => m_Wrapper.m_Gameplay_Disparo;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
-        public InputAction @Dash => m_Wrapper.m_Gameplay_Dash;
+        public InputAction @DASHING => m_Wrapper.m_Gameplay_DASHING;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -255,9 +255,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @Dash.started += instance.OnDash;
-            @Dash.performed += instance.OnDash;
-            @Dash.canceled += instance.OnDash;
+            @DASHING.started += instance.OnDASHING;
+            @DASHING.performed += instance.OnDASHING;
+            @DASHING.canceled += instance.OnDASHING;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -271,9 +271,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @Dash.started -= instance.OnDash;
-            @Dash.performed -= instance.OnDash;
-            @Dash.canceled -= instance.OnDash;
+            @DASHING.started -= instance.OnDASHING;
+            @DASHING.performed -= instance.OnDASHING;
+            @DASHING.canceled -= instance.OnDASHING;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -296,6 +296,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnDisparo(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnDash(InputAction.CallbackContext context);
+        void OnDASHING(InputAction.CallbackContext context);
     }
 }
