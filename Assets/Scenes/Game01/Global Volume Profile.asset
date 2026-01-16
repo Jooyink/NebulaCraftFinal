@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.145
+    m_Value: 0.14
 --- !u!114 &-8503012625566354461
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -78,7 +78,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.3
+    m_Value: 0.19
   xMultiplier:
     m_OverrideState: 1
     m_Value: 0.895
@@ -207,10 +207,10 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.425
+    m_Value: 0.55
   response:
     m_OverrideState: 0
     m_Value: 0.8

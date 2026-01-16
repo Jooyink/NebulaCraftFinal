@@ -1115,7 +1115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 19.76, y: -22.19}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &352945559
@@ -2816,10 +2816,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed5b6fcedde8014faa48ab641d77ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4457046106062281810, guid: 83a64c07a1a0cc849bde7b03761eaf80, type: 3}
+  difficultyLevels:
+  - levelName: LEVEL 01
+    enemies:
+    - {fileID: 4457046106062281810, guid: 7c1c2c4b8a16a4d4fbd40f6e4e2aa48e, type: 3}
+    spawnMin: 0.6
+    spawnMax: 1.2
+    speedMultiplier: 1.6
+    fireRateMultiplier: 2
+  - levelName: LEVEL 02
+    enemies:
+    - {fileID: 4457046106062281810, guid: 7c1c2c4b8a16a4d4fbd40f6e4e2aa48e, type: 3}
+    - {fileID: 4457046106062281810, guid: 1ca60b46ad230384dbfe53f00f3a24bf, type: 3}
+    spawnMin: 0.6
+    spawnMax: 1.2
+    speedMultiplier: 1.6
+    fireRateMultiplier: 2
+  - levelName: LEVEL3
+    enemies:
+    - {fileID: 4457046106062281810, guid: f50e3251aa3bcdc47bbee96689644df1, type: 3}
+    spawnMin: 0.6
+    spawnMax: 1.2
+    speedMultiplier: 1.6
+    fireRateMultiplier: 2
+  - levelName: 
+    enemies:
+    - {fileID: 4457046106062281810, guid: 7c1c2c4b8a16a4d4fbd40f6e4e2aa48e, type: 3}
+    - {fileID: 4457046106062281810, guid: f50e3251aa3bcdc47bbee96689644df1, type: 3}
+    - {fileID: 4457046106062281810, guid: 1ca60b46ad230384dbfe53f00f3a24bf, type: 3}
+    spawnMin: 0.5
+    spawnMax: 1.2
+    speedMultiplier: 1.6
+    fireRateMultiplier: 2
   spawnArea: {fileID: 866067600}
-  spawnIntervalMin: 0.5
-  spawnIntervalMax: 1
+  timePerLevel: 30
 --- !u!61 &866067600
 BoxCollider2D:
   m_ObjectHideFlags: 0

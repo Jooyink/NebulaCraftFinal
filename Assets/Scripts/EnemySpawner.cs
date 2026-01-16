@@ -5,26 +5,47 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Configuración del spawn")]
-    public GameObject enemyPrefab;     // Prefab del enemigo
-    public Collider2D spawnArea;       // Área donde spawnearán los enemigos
-    public float spawnIntervalMin = 1f; 
-    public float spawnIntervalMax = 3f; 
+    public DifficultLevel[] difficultyLevels;
+    public Collider2D spawnArea;
+
+    public float timePerLevel = 30f;
+    private int currentLevel = 0;
 
     private void Start()
     {
+        StartCoroutine(DifficultyProgression());
         StartCoroutine(SpawnEnemies());
     }
 
-    private System.Collections.IEnumerator SpawnEnemies()
+    IEnumerator DifficultyProgression()
+    {
+        while (currentLevel < difficultyLevels.Length - 1)
+        {
+            yield return new WaitForSeconds(timePerLevel);
+            currentLevel++;
+        }
+    }
+
+    IEnumerator SpawnEnemies()
     {
         while (true)
         {
-            float waitTime = Random.Range(spawnIntervalMin, spawnIntervalMax);
+            DifficultLevel level = difficultyLevels[currentLevel];
+
+            float waitTime = Random.Range(level.spawnMin, level.spawnMax);
             yield return new WaitForSeconds(waitTime);
 
-            Vector2 randomPoint = GetRandomPointInCollider(spawnArea);
-            Instantiate(enemyPrefab, randomPoint, Quaternion.identity);
+            Vector2 spawnPoint = GetRandomPointInCollider(spawnArea);
+
+            int enemyIndex = Random.Range(0, level.enemies.Length);
+            GameObject enemyGO = Instantiate(
+                level.enemies[enemyIndex],
+                spawnPoint,
+                Quaternion.identity
+            );
+
+            EnemyBase enemy = enemyGO.GetComponent<EnemyBase>();
+            enemy.ApplyDifficulty(level.speedMultiplier, level.fireRateMultiplier);
         }
     }
 
@@ -32,11 +53,13 @@ public class EnemySpawner : MonoBehaviour
     {
         Bounds bounds = col.bounds;
         Vector2 point;
+
         do
         {
-            float randomX = Random.Range(bounds.min.x, bounds.max.x);
-            float randomY = Random.Range(bounds.min.y, bounds.max.y);
-            point = new Vector2(randomX, randomY);
+            point = new Vector2(
+                Random.Range(bounds.min.x, bounds.max.x),
+                Random.Range(bounds.min.y, bounds.max.y)
+            );
         }
         while (!col.OverlapPoint(point));
 
