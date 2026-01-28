@@ -12,32 +12,29 @@ public class PlayerLives : MonoBehaviour
     public Animator animatorHit;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+ private void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.CompareTag("Enemy") || other.CompareTag("EnemyProyectile"))
     {
-        // Si el jugador choca con un enemigo o proyectil
-        if (collision.collider.CompareTag("Enemy") || collision.collider.CompareTag("EnemyProyectile"))
+        AudioManager.instance.PlaySFX(AudioManager.instance.explosionSFX);
+
+        Destroy(other.gameObject);
+        Instantiate(explotionPrefab, transform.position, Quaternion.identity);
+
+        GameManager.instance.vida -= 1;
+        animatorHit.SetTrigger("Hit");
+
+        Camera.main.GetComponent<CamaraShake>()
+            .Shake(0.15f, 0.08f);
+
+        UpdateLivesUI();
+
+        if (GameManager.instance.vida <= 0)
         {
-                    AudioManager.instance.PlaySFX(AudioManager.instance.explosionSFX);
-
-            Destroy(collision.collider.gameObject); // destruye el objeto que golpeó
-            Instantiate(explotionPrefab, transform.position, Quaternion.identity); // efecto
-            GameManager.instance.vida -= 1; // resta vida
-                      animatorHit.SetTrigger("Hit");
-
-
-                       Camera.main.GetComponent<CamaraShake>()
-    .Shake(0.15f, 0.08f); //Animacion de Shake en camara
-
-            // Actualiza la UI de corazones
-            UpdateLivesUI();
-
-            // Si ya no hay vidas → destruye al jugador
-            if (GameManager.instance.vida <= 0)
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
     }
+}
     
 
     private void UpdateLivesUI()

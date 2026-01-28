@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3049764632886291508}
   - component: {fileID: 2184726311215556949}
   - component: {fileID: 187738026574949334}
-  - component: {fileID: 234043626234451203}
   - component: {fileID: 7841419822819770368}
   - component: {fileID: -6849421451993912410}
   m_Layer: 9
@@ -78,12 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1775191449, guid: 2c0fda185f8c0d546a6bf2d73b844243, type: 3}
-  m_Color: {r: 0.3301887, g: 0.010902463, b: 0.010902463, a: 1}
+  m_Sprite: {fileID: -2047251400, guid: 2a9d8f02a2d906c4db04a39159af0ebc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.75, y: 0.6875}
+  m_Size: {x: 0.8333333, y: 0.875}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -118,15 +117,15 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.009576827}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 0.75, y: 0.6875}
+    oldSize: {x: 0.8333333, y: 0.875}
+    newSize: {x: 0.8333333, y: 0.875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -134,33 +133,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.70745295}
   m_EdgeRadius: 0
---- !u!50 &234043626234451203
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4457046106062281810}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!95 &7841419822819770368
 Animator:
   serializedVersion: 5
@@ -194,8 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 158e1508955c9e24f8a40bcc2df49744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.95
-  health: 1
+  baseSpeed: 2.5
 --- !u!1 &7233148000522168362
 GameObject:
   m_ObjectHideFlags: 0

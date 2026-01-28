@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2270272854922085517}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  explotionPrefab: {fileID: 956542578302766613, guid: fd7b83630eee9714ebf3609f47171b22, type: 3}
+  explotionPrefab: {fileID: 956542578302766613, guid: 40f4293e301867e46b2731ae3b16d565, type: 3}
   animatorHit: {fileID: 0}
 --- !u!1 &5699729406099491995
 GameObject:

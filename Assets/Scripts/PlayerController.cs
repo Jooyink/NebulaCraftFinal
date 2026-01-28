@@ -7,104 +7,88 @@ using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
-[Header("Dash After Image")]
-public GameObject dashImagePrefab;
-public float afterImageDelay = 0.05f;    PlayerControls controls;
+    [Header("Movement")]
+    public float speed = 5f;
+    public float dashSpeed = 12f;
+    public float dashDuration = 0.2f;
+
+    [Header("Dash After Image")]
+    public GameObject dashImagePrefab;
+    public float afterImageDelay = 0.05f;
+
+    private Rigidbody2D rb;
+    private bool isDashing = false;
+    private float moveInput;
+
+    public Animator animator;
 
     void Awake()
     {
-
-        controls = new PlayerControls();
-
-       // controls.Gameplay.Move.performed += ctx => Update();
-
-          
+        rb = GetComponent<Rigidbody2D>();
     }
 
-
-    public float speed = 5f;
-    public float dashSpeed = 10f;
-    public float dashDuration = 0.2f; // cuanto dura el dash
-    private bool isDashing = false;
-
-    public Animator animator;
-    public float MoveInput;
     void Update()
     {
-        if (!isDashing) // solo se mueve normal si no está en dash
+        if (isDashing) return;
+
+        moveInput = Input.GetAxisRaw("Horizontal");
+
+        animator.SetFloat("movement", Mathf.Abs(moveInput));
+
+        if (moveInput > 0)
+            transform.localScale = new Vector3(-1, 1, 1);
+        else if (moveInput < 0)
+            transform.localScale = new Vector3(1, 1, 1);
+
+        if (Input.GetKeyDown(KeyCode.E) && moveInput != 0)
         {
-            MoveInput = Input.GetAxis("Horizontal");
-
-            animator.SetFloat("movement", Mathf.Abs(MoveInput));
-
-            if (MoveInput > 0)
-                transform.localScale = new Vector3(-1, 1, 1);
-
-            if (MoveInput < 0)
-                transform.localScale = new Vector3(1, 1, 1);
-
-            transform.Translate(Vector2.right * MoveInput * speed * Time.deltaTime);
-
-            // Dash con tecla E
-            if (Input.GetKeyDown(KeyCode.E) && MoveInput != 0 )
-            {
-                StartCoroutine(Dash(MoveInput));
-            }
+            StartCoroutine(Dash(moveInput));
         }
     }
 
-    
+    void FixedUpdate()
+    {
+        if (!isDashing)
+        {
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        }
+    }
 
- 
     IEnumerator Dash(float direction)
-    
-      {
-    isDashing = true;
-
-    float time = 0;
-    float afterImageTimer = 0;
-
-    while (time < dashDuration)
     {
-        transform.Translate(Vector2.right * direction * dashSpeed * Time.deltaTime);
+        isDashing = true;
 
-        // Crear afterimages
-        afterImageTimer += Time.deltaTime;
-        if (afterImageTimer >= afterImageDelay)
+        float time = 0f;
+        float afterImageTimer = 0f;
+
+        rb.velocity = new Vector2(direction * dashSpeed, 0);
+
+        while (time < dashDuration)
         {
-            SpawnAfterImage();
-            afterImageTimer = 0;
+            afterImageTimer += Time.deltaTime;
+            if (afterImageTimer >= afterImageDelay)
+            {
+                SpawnAfterImage();
+                afterImageTimer = 0;
+            }
+
+            time += Time.deltaTime;
+            yield return null;
         }
 
-        time += Time.deltaTime;
-        yield return null;
+        isDashing = false;
     }
 
-    isDashing = false;
-}
-
-void SpawnAfterImage()
-{
-    GameObject img = Instantiate(
-        dashImagePrefab,
-        transform.position,
-        transform.rotation
-    );
-
-    SpriteRenderer sr = img.GetComponent<SpriteRenderer>();
-    sr.sprite = GetComponent<SpriteRenderer>().sprite;
-    sr.flipX = GetComponent<SpriteRenderer>().flipX;
-}
-
-    void OnEnable()
+    void SpawnAfterImage()
     {
+        GameObject img = Instantiate(
+            dashImagePrefab,
+            transform.position,
+            transform.rotation
+        );
 
-        controls.Gameplay.Enable();
-    }
-
-    void OnDisable()
-    {
-
-        controls.Gameplay.Disable();
+        SpriteRenderer sr = img.GetComponent<SpriteRenderer>();
+        sr.sprite = GetComponent<SpriteRenderer>().sprite;
+        sr.flipX = GetComponent<SpriteRenderer>().flipX;
     }
 }

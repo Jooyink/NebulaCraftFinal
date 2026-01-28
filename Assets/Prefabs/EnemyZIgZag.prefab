@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1775191449, guid: 2c0fda185f8c0d546a6bf2d73b844243, type: 3}
-  m_Color: {r: 0.04672481, g: 0.2830189, b: 0.25538614, a: 1}
+  m_Sprite: {fileID: 1798551706, guid: f693cf8033f2d7b4b9d15846341a3923, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,14 +118,14 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.009576827}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.7916667, y: 0.875}
     newSize: {x: 0.75, y: 0.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4457046106062281810}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -194,10 +194,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250e17d99caae6045b28c40b46f59dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
-  health: 1
-  amplitude: 4.35
-  frequency: 1.36
+  baseSpeed: 4
+  frequency: 5
+  amplitude: 3
 --- !u!1 &7233148000522168362
 GameObject:
   m_ObjectHideFlags: 0

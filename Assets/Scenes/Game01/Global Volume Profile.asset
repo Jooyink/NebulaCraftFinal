@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.14
+    m_Value: 0.16
 --- !u!114 &-8503012625566354461
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -34,12 +34,12 @@ MonoBehaviour:
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.9
+    m_Value: 0.89
   intensity:
     m_OverrideState: 1
     m_Value: 6.44
   scatter:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0.541
   clamp:
     m_OverrideState: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 1
   downscale:
     m_OverrideState: 0
     m_Value: 0
@@ -57,12 +57,12 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 6
   dirtTexture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: f126e22de62eed34cbe909fd48ede7ae, type: 3}
     dimension: 1
   dirtIntensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 26.11
 --- !u!114 &-2742161082400826520
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -78,19 +78,19 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.19
+    m_Value: 0.33
   xMultiplier:
     m_OverrideState: 1
-    m_Value: 0.895
+    m_Value: 0.62
   yMultiplier:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   center:
     m_OverrideState: 0
     m_Value: {x: 0.5, y: 0.5}
   scale:
-    m_OverrideState: 0
-    m_Value: 1
+    m_OverrideState: 1
+    m_Value: 0.96
 --- !u!114 &-2024072822949628210
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 0
     m_Value: 0
@@ -112,7 +112,7 @@ MonoBehaviour:
     m_Value: 0
   intensity:
     m_OverrideState: 1
-    m_Value: 0.085
+    m_Value: 0.135
   clamp:
     m_OverrideState: 0
     m_Value: 0.054
@@ -143,7 +143,7 @@ MonoBehaviour:
     m_Value: -8
   saturation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 15
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,13 +207,13 @@ MonoBehaviour:
   active: 1
   type:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 10
   intensity:
     m_OverrideState: 1
-    m_Value: 0.55
+    m_Value: 0.04
   response:
-    m_OverrideState: 0
-    m_Value: 0.8
+    m_OverrideState: 1
+    m_Value: 0.13
   texture:
-    m_OverrideState: 0
-    m_Value: {fileID: 0}
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: 2daad2bc4c6d5674f9bd730bb260f050, type: 3}

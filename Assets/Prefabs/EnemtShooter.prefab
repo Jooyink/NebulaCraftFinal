@@ -78,8 +78,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1775191449, guid: 2c0fda185f8c0d546a6bf2d73b844243, type: 3}
-  m_Color: {r: 0.8490566, g: 0.8465245, b: 0, a: 1}
+  m_Sprite: {fileID: 1468773419, guid: d4b22bb73b7403140abe9ae7875b6e4d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -118,21 +118,21 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.009576827}
+  m_Offset: {x: 0.011158481, y: 0.012740165}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.875, y: 0.8958333}
     newSize: {x: 0.75, y: 0.6875}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.70745295}
+  m_Size: {x: 0.9359746, y: 0.99013454}
   m_EdgeRadius: 0
 --- !u!50 &234043626234451203
 Rigidbody2D:
@@ -142,7 +142,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4457046106062281810}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -194,8 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d65b996aa5c1246a633a0a7b5ddcc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  health: 1
+  baseSpeed: 2
   projectilePrefab: {fileID: 4427877273380521617, guid: 7937a0cb862bf454e86887616f93fffd, type: 3}
   shootInterval: 2
 --- !u!1 &7233148000522168362
